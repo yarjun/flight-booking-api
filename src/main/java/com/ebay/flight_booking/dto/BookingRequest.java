@@ -1,0 +1,26 @@
+package com.ebay.flight_booking.dto;
+
+/**
+ * Request DTO for booking a flight ticket.
+ */
+public class BookingRequest {
+
+    private String flightNumber;
+    private String passengerName;
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
+    public String getPassengerName() {
+        return passengerName;
+    }
+
+    public void setPassengerName(String passengerName) {
+        this.passengerName = passengerName;
+    }
+}
