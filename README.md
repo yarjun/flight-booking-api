@@ -89,6 +89,9 @@ Validate the application logic (Controller, Service, and Exception layers) by ru
 ```Bash
 ./mvnw test
 ```
+
+## 🧪 Future improvements: 
+* Could add more detailed error response examples, flight search or destination logic, DB intergation, integration tests, and API authentication for production readiness.
 ### 📝 Technical Notes
 * **Thread Safety**: Designed to prevent overbooking during high-traffic periods using AtomicInteger.
 
