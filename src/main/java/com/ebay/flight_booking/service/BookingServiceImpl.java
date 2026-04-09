@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 /**
  * Implementation of BookingService.
  */
+
 @Service
 public class BookingServiceImpl implements BookingService {
 

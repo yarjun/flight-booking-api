@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 /**
  * REST controller for flight operations.
@@ -31,7 +32,7 @@ public class FlightController {
      * @return created flight
      */
     @PostMapping
-    public ResponseEntity<Flight> createFlight(@RequestBody CreateFlightRequest request) {
+    public ResponseEntity<Flight> createFlight(@Valid @RequestBody CreateFlightRequest request) {
 
         log.info("Received request to create flight: {}", request.getFlightNumber());
 

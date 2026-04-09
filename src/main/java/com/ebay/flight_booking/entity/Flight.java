@@ -1,5 +1,9 @@
 package com.ebay.flight_booking.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -9,6 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * using {@link AtomicInteger}.
  * </p>
  */
+@Data
+@AllArgsConstructor // adds constructor with all fields
 public class Flight {
 
     private final String flightNumber;
