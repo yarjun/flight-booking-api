@@ -54,7 +54,7 @@ class ControllerTests {
         request.setFlightNumber("FL123");
         request.setTotalSeats(10);
 
-        Flight flight = new Flight("FL123", 10);
+        Flight flight = new Flight("FL123", 10); // availableSeats = 10 initially
         when(flightService.createFlight("FL123", 10)).thenReturn(flight);
 
         mockMvc.perform(post("/flights")
@@ -63,7 +63,7 @@ class ControllerTests {
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.flightNumber").value("FL123"))
                 .andExpect(jsonPath("$.totalSeats").value(10))
-                .andExpect(jsonPath("$.bookedSeats").value(0));
+                .andExpect(jsonPath("$.availableSeats").value(10)); // changed from bookedSeats
     }
 
     @Test
@@ -75,7 +75,7 @@ class ControllerTests {
         // Mock Booking returned by service
         Booking booking = new Booking("FL123", "John Doe");
         booking = Mockito.spy(booking); // spy to mock getBookingId
-        Mockito.doReturn(1L).when(booking).getBookingId();
+        Mockito.doReturn("1").when(booking).getBookingId();
         when(bookingService.bookTicket(anyString(), anyString())).thenReturn(booking);
 
         mockMvc.perform(post("/bookings")
